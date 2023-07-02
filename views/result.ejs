@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram People Near Me</title>
+    <link rel="stylesheet" href="https://tailwindui.com/v2-assets/components.css?hash=fe7b0d8e5fd7f78e21e2652a5de212c0">
+    <script src="https://tailwindui.com/v2-assets/components.js?hash=c42e44f6c92eb7517e1a4e8bd13028a6"></script>
+    <link rel="modulepreload" href="https://tailwindui.com/build/assets/iframe-alpine-964dceff.js">
+    <link rel="modulepreload" href="https://tailwindui.com/build/assets/iframe-a81dc9a8.js">
+    <link rel="modulepreload" href="https://tailwindui.com/build/assets/_commonjsHelpers-87174ba5.js">
+    <script type="module" src="https://tailwindui.com/build/assets/iframe-alpine-964dceff.js"></script>
+</head>
+<body class="bg-white" style="overflow-y: auto;">
+    <div class="bg-white px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl">
+    
+            <ul role="list" class="divide-y divide-gray-100">
+                <% result.forEach(function(item){ %>
+                    <li class="flex justify-between gap-x-6 py-5">
+                        <div class="flex gap-x-4">
+                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                                src="<%= item.pic %>"
+                                alt="">
+                            <div class="min-w-0 flex-auto">
+                                <p class="text-sm font-semibold leading-6 text-gray-900">
+                                    <%= item.name %>
+                                </p>
+                                <p class="mt-1 truncate text-xs leading-5 text-gray-500">@<%= item.username %></p>
+                            </div>
+                        </div>
+                        <div class="hidden sm:flex sm:flex-col sm:items-end">
+                            <a href="https://www.instagram.com/<%= item.username %>" target="_blank" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">View Profile</a>
+                        </div>
+                    </li>
+                <% }) %>
+    
+            </ul>
+    
+        </div>
+    </div>
+
+</body>
+</html>
